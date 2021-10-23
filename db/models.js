@@ -5,14 +5,21 @@
 /* 1. 連接資料庫 */
 // 1.1 引入 mongoose
 const mongoose = require('mongoose');
+require('dotenv').config()
+
 // 1.2 連接資料庫
-mongoose.connect('mongodb://localhost:27017/freelance')
+mongoose.connect(
+  process.env.DB_CONNECTION,
+  { useNewUrlParser: true },
+  () => { console.log('connected to db') }
+)
 // 1.3 連接物件
 const connection = mongoose.connection
 // 1.4 綁定監聽
 connection.on('connected', () => {
   console.log('mongoDB connect success!');
 })
+
 
 
 /* 2. 定義 User Model */
