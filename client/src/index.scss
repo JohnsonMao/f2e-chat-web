@@ -1,0 +1,58 @@
+// Custom.scss
+// Option B: Include parts of Bootstrap
+
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "~bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+@import "./assets/scss/custom_variable";
+
+// 3. Include remainder of required Bootstrap stylesheets
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/utilities";
+
+// 4. Include any optional Bootstrap components as you like
+@import "~bootstrap/scss/root";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/type";
+@import "~bootstrap/scss/images";
+@import "~bootstrap/scss/containers";
+@import "~bootstrap/scss/grid";
+// 5. Add additional custom code here
+
+@import '~bootstrap/scss/bootstrap';
+@import "./assets/scss/custom_variable";
+
+* { 
+  touch-action: pan-y;
+}
+body {
+  padding-top: 56px;
+}
+.nav-item {
+  a {
+    display: inline-block;
+    text-decoration: none;
+    color: darken($light, 50);
+
+    &.active {
+      color: $primary;
+    }
+  }
+}
+.frame {
+  width: 50%;
+  align-self: center;
+
+  &-chat {
+    width: 15%;
+  }
+}
+
+img {
+  object-fit: cover;
+  object-position: top;
+}
+
+@import "~bootstrap/scss/utilities/api";

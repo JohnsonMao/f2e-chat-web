@@ -5,11 +5,6 @@ const md5 = require("blueimp-md5");
 const { UserModel, ChatModel } = require("../db/models");
 const filter = { password: 0, __v: 0 }; // 指定過濾的資料
 
-/* GET home page. */
-router.get("/", function (req, res, next) {
-  res.render("index", { title: "Express" });
-});
-
 // 註冊路由
 /* 
   1. path: /register
@@ -19,7 +14,7 @@ router.get("/", function (req, res, next) {
   5. 註冊成功: { status: 0, data: { id: 'abc', username: 'xxx', password: 'yyy' }}
   6. 註冊失敗: { status: 1, msg: '此帳號已被註冊' }
 */
-router.post("/register", function (req, res) {
+router.post("/api/register", function (req, res) {
   const { username, password, userType } = req.body; // 讀取請求資料
   UserModel.findOne({ username }, (err, user) => {
     if (user) {
@@ -39,7 +34,7 @@ router.post("/register", function (req, res) {
 
 // 登入路由
 
-router.post("/login", function (req, res) {
+router.post("/api/login", function (req, res) {
   const { username, password } = req.body;
   UserModel.findOne(
     { username, password: md5(password) },
@@ -57,7 +52,7 @@ router.post("/login", function (req, res) {
 
 // 更新使用者資料路由
 
-router.post("/update", function (req, res) {
+router.post("/api/update", function (req, res) {
   const userid = req.cookies.userid;
   if (!userid) {
     return res.send({ code: 1, msg: "請先登入！" });
@@ -79,7 +74,7 @@ router.post("/update", function (req, res) {
 
 // 透過 cookie 中的 userid 獲取使用者資料
 
-router.get("/user", function (req, res) {
+router.get("/api/user", function (req, res) {
   const userid = req.cookies.userid;
   if (!userid) {
     return res.send({ code: 1, msg: "請先登入！" });
@@ -97,7 +92,7 @@ router.get("/user", function (req, res) {
 
 // 獲取用戶列表
 
-router.get("/userlist", function (req, res) {
+router.get("/api/userlist", function (req, res) {
   const { type } = req.query;
   UserModel.find({ userType: type }, filter, function (err, users) {
     res.send({ code: 0, data: users });
@@ -106,7 +101,7 @@ router.get("/userlist", function (req, res) {
 
 // 獲取聊天列表
 
-router.get("/msglist", function (req, res) {
+router.get("/api/msglist", function (req, res) {
   // 獲取 userid
   const userid = req.cookies.userid;
   UserModel.find(function (err, userDocs) {
@@ -131,7 +126,7 @@ router.get("/msglist", function (req, res) {
 
 // 已讀功能
 
-router.post("/readMsg", function (req, res) {
+router.post("/api/readMsg", function (req, res) {
   const from = req.body.from;
   const to = req.cookies.userid;
 
