@@ -27,7 +27,6 @@ app.get('*', (req, res) => {
 })
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -46,7 +45,7 @@ app.use(function(err, req, res, next) {
 });
 
 // ensures the proxy we set earlier is pointing to your express api
-const port = process.env.PORT || 4000
+const port = process.env.PORT || 4500
 app.listen(port, () => {
   console.log(`listening on port ${port}`)
 });
