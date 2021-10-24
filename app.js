@@ -45,10 +45,4 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-// ensures the proxy we set earlier is pointing to your express api
-const port = process.env.PORT || 4000
-app.listen(port, () => {
-  console.log(`listening on port ${port}`)
-});
-
 module.exports = app;
