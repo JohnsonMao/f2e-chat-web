@@ -2,7 +2,8 @@
 
 ## 描述
 
-自由接案者平台 Side Project，包含**前端**與**後端資料庫**
+自由接案聊天平台 Side Project，包含**前端**與**後端資料庫**，並部署到 **Heroku** 上
+
 提供**註冊**與**登入**，接案者與發案者**即時聊天功能**。
 
 ## 使用技術
@@ -33,3 +34,10 @@
 - prop-types
 - rc-queue-anim
 - socket.io-client
+
+## 遇到的困難
+
+- [x] mongoose String
+- [x] nodemon problem
+- [ ] back-end API problem
+ 
