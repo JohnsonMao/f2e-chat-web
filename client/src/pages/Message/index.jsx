@@ -1,6 +1,6 @@
 import React from "react";
 import { useHistory } from 'react-router-dom';
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import QueueAnim from 'rc-queue-anim';
 import { Container, Card, ListGroup, Badge } from "react-bootstrap";
 
@@ -43,7 +43,6 @@ function getLastMsgs(chatMsgs, userid) {
 export default function Message() {
   const user = useSelector((state) => state.user);
   const { users, chatMsgs } = useSelector((state) => state.chat);
-  const dispatch = useDispatch();
   const history = useHistory();
 
   const lastMsgs = getLastMsgs(chatMsgs, user._id);

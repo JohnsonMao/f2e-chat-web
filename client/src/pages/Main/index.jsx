@@ -33,7 +33,7 @@ export default function Main() {
     if (userid && !user._id) {
       dispatch(getUser());
     } 
-  },[])
+  },[dispatch, user._id, userid])
 
   // 為獲取到 cookie，跳轉登入頁面
   if (!userid) return <Redirect to="/login"/>

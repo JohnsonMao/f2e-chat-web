@@ -33,7 +33,7 @@ export default function Chat() {
     window.scrollTo(0, document.body.scrollHeight);
     // 已讀訊息方法
     dispatch( readMsg(targetId, meId));
-  }, [chatMsgs.length])
+  }, [chatMsgs.length, dispatch, targetId, meId])
 
   const emojis = ["😀","😆","😅","😂","🤣","😇","😉","🙂","😋","🙃","😍","🥰","😘","🤪","😝","🤑","😎","🤡","🥳","🤬","🤐","😒","🙄","😱","😵","🤮","😴","😈","🥴","😥","💩","👌"]
 

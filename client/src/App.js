@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -15,13 +15,13 @@ library.add( faUser, faHandshake, faCommentDots, faChevronLeft );
 export default function App() {
   return (
     <Provider store={ store }>
-      <HashRouter>
+      <BrowserRouter>
         <Switch>
           <Route path='/register' component={ Register } />
           <Route path='/login' component={ Login } />
           <Route component={ Main } />
         </Switch>
-      </HashRouter>
+      </BrowserRouter>
     </Provider>
   );
 }

@@ -12,7 +12,7 @@ export default function Freelance() {
   
   useEffect(() => {
     dispatch( getUserList("boss"));
-  },[])
+  },[dispatch])
 
   return (
     <Container>
