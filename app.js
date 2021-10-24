@@ -4,10 +4,8 @@ const cors = require('cors');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-require('dotenv').config()
 
 var indexRouter = require('./routes/index');
-// var usersRouter = require('./routes/users');
 
 var app = express();
 
@@ -24,7 +22,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.use('/', indexRouter);
-// app.use('/users', usersRouter);
 
 // serves the built version of your react app
 app.use(express.static(path.join(__dirname, 'client/build')));
@@ -49,7 +46,7 @@ app.use(function(err, req, res, next) {
 });
 
 // ensures the proxy we set earlier is pointing to your express api
-const port = process.env.PORT || 4500
+const port = process.env.PORT || 4000
 app.listen(port, () => {
   console.log(`listening on port ${port}`)
 });
