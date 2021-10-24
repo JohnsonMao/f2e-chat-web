@@ -10,7 +10,7 @@ require('dotenv').config()
 // 1.2 連接資料庫
 mongoose.connect(
   String( process.env.DB_CONNECTION ),
-  { useNewUrlParser: true },
+  { useNewUrlParser: true, useUnifiedTopology: true },
   () => { console.log('connected to db') }
 )
 // 1.3 連接物件
