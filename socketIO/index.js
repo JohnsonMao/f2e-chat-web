@@ -5,6 +5,9 @@ module.exports = function (server) {
     cors: {
       origin: "*",
     },
+    transports: [
+      'websocket'
+    ]
   });
 
   // 監測 client 與 server 連接

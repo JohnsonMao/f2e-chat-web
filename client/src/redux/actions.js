@@ -18,11 +18,10 @@ import {
   RECEIVE_MSG,
   MSG_READ
 } from "./action-types";
-require('dotenv').config()
 
 function initSocketIO (dispatch, userid) {
   if (!io.socket) {
-    io.socket = io(`:${process.env.PORT}`);
+    io.socket = io('/', {transports: ['websocket']});
     console.log(io.socket)
 
     // 接收訊息
