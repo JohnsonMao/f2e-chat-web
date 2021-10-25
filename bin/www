@@ -7,7 +7,6 @@
 var app = require('../app');
 var debug = require('debug')('freelance-network-server:server');
 var http = require('http');
-const cors = require('cors');
 
 /**
  * Get port from environment and store in Express.
@@ -21,7 +20,6 @@ app.set('port', port);
  */
 
 var server = http.createServer(app);
-server.use(cors());
 /**
  * Socket.io
  */
