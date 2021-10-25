@@ -10,7 +10,7 @@ var indexRouter = require('./routes/index');
 var app = express();
 
 // prevents cors headaches when your react app calls your api
-app.use(cors())
+app.use(cors());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
