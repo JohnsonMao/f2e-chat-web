@@ -5,7 +5,7 @@
 /* 1. 連接資料庫 */
 // 1.1 引入 mongoose
 const mongoose = require('mongoose');
-require('dotenv').config()
+require('dotenv').config();
 
 // 1.2 連接資料庫
 mongoose.connect(
