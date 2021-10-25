@@ -18,10 +18,11 @@ import {
   RECEIVE_MSG,
   MSG_READ
 } from "./action-types";
+require('dotenv').config()
 
 function initSocketIO (dispatch, userid) {
   if (!io.socket) {
-    io.socket = io("ws://localhost:4000");
+    io.socket = io(`ws://localhost:${process.env.PORT}`);
 
     // 接收訊息
     io.socket.on("receiveMsg", function (chatMsg) {
