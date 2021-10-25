@@ -22,7 +22,6 @@ import {
 function initSocketIO (dispatch, userid) {
   if (!io.socket) {
     io.socket = io('/', {transports: ['websocket']});
-    console.log(io.socket)
 
     // 接收訊息
     io.socket.on("receiveMsg", function (chatMsg) {
