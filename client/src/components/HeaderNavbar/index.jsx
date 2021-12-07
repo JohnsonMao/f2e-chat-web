@@ -13,7 +13,7 @@ export default function HeaderNavbar(props) {
             <FontAwesomeIcon icon="chevron-left"/>
           </Button>) : null
         }
-        <Navbar.Brand href="#home" className="text-light fw-bold m-0">
+        <Navbar.Brand href="#" className="text-light fw-bold m-0">
           {props.title}
         </Navbar.Brand>
       </Container>

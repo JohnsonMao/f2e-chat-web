@@ -29,11 +29,10 @@ const userSchema = mongoose.Schema({
   password: {type: String, required: true}, // 密碼
   userType: {type: String, required: true}, // 類型
   avater: {type: String, default: "dog-4"}, // 頭像
-  name: {type: String},                     // 名字
-  post: {type: String},                     // 職位
+  birthday: {type: String},                 // 生日
+  gender: {type: String},                   // 性別
+  name: {type: String},                     // 名稱
   info: {type: String},                     // 簡介
-  company: {type: String},                  // 公司
-  salary: {type: String},                   // 薪資
 })
 // 2.2 定義 Model
 const UserModel = mongoose.model('user', userSchema);
