@@ -111,6 +111,7 @@ router.get("/api/msglist", function (req, res) {
         username: user.username,
         name: user.name,
         avater: user.avater,
+        info: user.info
       };
       return users;
     }, {});
