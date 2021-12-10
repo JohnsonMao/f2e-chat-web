@@ -20,8 +20,9 @@ export default function AvaterSelector(props) {
   const avatersList = avaters.map((item, index) => (
     <Col key={`avater-${index}`}>
       <Card 
-        className={`h-100 justify-content-end border-4 bg-light px-2 pt-1 
-          ${item.src === avater ? `border-primary` : `border-light`}`}
+        bg="primary"
+        className={`h-100 justify-content-end border-4 px-2 pt-1 
+          ${item.src === avater ? `border-success` : `border-primary`}`}
         onClick={checkedAvater}
         data-avater={item.src}>
         <Card.Img variant="top" 
@@ -40,7 +41,7 @@ export default function AvaterSelector(props) {
   return (
     <>
       <p className="p-2 mb-0">請選擇虛擬形象</p>
-      <Row xs={4} className="g-0 mb-2">
+      <Row xs={4} className="g-0 bg-primary rounded mb-2">
         { avatersList }
       </Row>
     </>

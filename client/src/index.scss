@@ -21,38 +21,94 @@
 @import "~bootstrap/scss/grid";
 // 5. Add additional custom code here
 
-@import '~bootstrap/scss/bootstrap';
-@import "./assets/scss/custom_variable";
+@import '~bootstrap/scss/navbar';
+@import '~bootstrap/scss/nav';
+@import '~bootstrap/scss/buttons';
+@import '~bootstrap/scss/card';
+@import '~bootstrap/scss/forms';
+@import '~bootstrap/scss/modal';
+@import '~bootstrap/scss/helpers';
 
-* { 
-  touch-action: pan-y;
-}
-body {
-  padding-top: 56px;
-}
+@import "./assets/scss/custom_base";
+
 .nav-item {
   a {
     display: inline-block;
     text-decoration: none;
-    color: darken($light, 50);
+    color: $light;
 
     &.active {
-      color: $primary;
+      color: $success;
     }
   }
 }
-.frame {
-  width: 50%;
-  align-self: center;
+.emoji {
+  padding-top: 0;
+  height: 0;
+  overflow: hidden;
+  transition: .3s;
 
-  &-chat {
-    width: 15%;
+  &__show {
+    padding-top: 4px;
+    height: 148px;
   }
 }
 
-img {
-  object-fit: cover;
-  object-position: top;
+.chat {
+  &-target::before,
+  &-me::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    border-width: 10px;
+    border-style: solid;
+  }
+  &-target::before {
+    left: -18px;
+    border-color: transparent $primary transparent transparent;
+  }
+  &-me::before {
+    right: -18px;
+    border-color: transparent transparent transparent $primary;
+  }
+}
+
+.text-line {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+
+  &-1 {
+    -webkit-line-clamp: 1;
+  }
+
+  &-2 {
+    -webkit-line-clamp: 2;
+  }
+}
+
+.desktop-content {
+  margin-top: 56px;
+  height: calc(100vh - 110px);
+  overflow-y: auto;
+  
+  &.row {
+    height: auto;
+    max-height: calc(100vh - 110px);
+  }
+}
+
+.position-absolute .shadow {
+  box-shadow: none !important;
+}
+
+.zIndex-1 {
+  z-index: 10;
+}
+
+.top-25 {
+  top: 25%;
 }
 
 @import "~bootstrap/scss/utilities/api";

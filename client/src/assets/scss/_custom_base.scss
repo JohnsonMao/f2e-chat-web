@@ -1,16 +1,65 @@
+@import './custom_variable';
+
+* { 
+  touch-action: pan-y;
+}
+
 body {
-  color: $dark-primary
+  background: $body-bg;
+  color: $body-color;
 }
 
 ul {
-  padding: 0;
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 a {
+  color: $success;
   text-decoration: none;
 }
 
 img {
   object-fit: cover;
+  object-position: top;
+  display: block;
+}
+
+input,
+button {
+
+  &::placeholder {
+    color: rgba($light, .5);
+  }
+}
+
+input[type='radio'] {
+  background: $light;
+}
+
+input[type='radio']:checked {
+  background: $success;
+}
+
+input[type='radio']:checked + label {
+  color: $success;
+}
+
+
+::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+::-webkit-scrollbar
+{
+  background: $primary;
+  width: 4px;
+
+  &-thumb
+  {
+    background: $light;
+    width: 4px;
+    cursor: pointer;
+  }
 }

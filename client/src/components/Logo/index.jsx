@@ -4,8 +4,8 @@ import { Container } from 'react-bootstrap';
 
 export default function Logo() {
   return (
-    <Container className="text-center">
-      <img src={ logo } width="240px" alt='logo'/>
+    <Container>
+      <img src={ logo } width="240px" className="mx-auto mt-5" alt='logo' />
     </Container>
   )
 }

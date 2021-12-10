@@ -1,14 +1,9 @@
 /* 動態計算跳轉路由 */
 
-export default function getRedirectTo (type, name) {
-  let path = '';
-  if (type === 'boss') {
-    path = '/boss';
-  } else {
-    path = '/freelance';
-  }
+export default function getRedirectTo (name) {
+  let path = 'partner';
   if (!name) {
-    path += 'info';
+    path = 'userinfo';
   }
   return path
 }
