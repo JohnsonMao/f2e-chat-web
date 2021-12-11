@@ -111,61 +111,68 @@ export default function Chat() {
               ))}
             </ul>
           </div>
-          <div className="position-absolute botton-0 start-0 end-0 bg-primary zIndex-1 py-2">
-            <Container className="position-absolute bottom-100 bg-primary rounded-top">
-              <Row xs={6} className={`emoji ${emojiShow ? "emoji__show" : ""}`}>
-                  {emojis.map((emoji) => (
-                    <Col
-                      key={emoji}
-                      onClick={(e) =>
-                        setContent(content + e.target.dataset.emoji)
-                      }
-                      data-emoji={emoji}
+          <div className="fixed-bottom zIndex-top pointer-events-none">
+            <Container>
+              <Row className="flex-row-reverse">
+                <Col lg="8" className="position-relative py-2 pointer-events-auto">
+                  <Container className="position-absolute start-0 bottom-100 bg-primary rounded-top">
+                    <Row
+                      xs={6}
+                      className={`emoji ${emojiShow ? "emoji__show" : ""}`}
                     >
-                      <span data-emoji={emoji} className="d-block text-center">
-                        {emoji}
-                      </span>
+                      {emojis.map((emoji) => (
+                        <Col
+                          key={emoji}
+                          onClick={(e) =>
+                            setContent(content + e.target.dataset.emoji)
+                          }
+                          data-emoji={emoji}
+                        >
+                          <span
+                            data-emoji={emoji}
+                            className="d-block text-center"
+                          >
+                            {emoji}
+                          </span>
+                        </Col>
+                      ))}
+                    </Row>
+                  </Container>
+                  <Row className="g-1 bg-primary pt-1">
+                    <Col>
+                      <input
+                        placeholder="開始聊天"
+                        onChange={(e) => setContent(e.target.value)}
+                        onKeyUp={handleSend}
+                        onFocus={() => setEmojiShow(false)}
+                        value={content}
+                        className="w-100 h-100 bg-secondary border-0 rounded text-light ps-2"
+                        aria-label="Start chat"
+                        aria-describedby="send"
+                      />
                     </Col>
-                  ))}
-                </Row>
-
-            </Container>
-          <Container>
-              
-              <Row className="g-1">
-                <Col>
-                  <input
-                    placeholder="開始聊天"
-                    onChange={(e) => setContent(e.target.value)}
-                    onKeyUp={handleSend}
-                    onFocus={() => setEmojiShow(false)}
-                    value={content}
-                    className="w-100 h-100 bg-secondary border-0 rounded text-light ps-2"
-                    aria-label="Start chat"
-                    aria-describedby="send"
-                  />
-                </Col>
-                <Col xs="auto">
-                  <Button
-                    variant="primary"
-                    type="button"
-                    onClick={() => setEmojiShow(!emojiShow)}
-                  >
-                    🙂
-                  </Button>
-                </Col>
-                <Col xs="auto">
-                  <Button
-                    variant="primary"
-                    type="button"
-                    id="send"
-                    onClick={handleSend}
-                  >
-                    <FontAwesomeIcon icon={"paper-plane"} />
-                  </Button>
+                    <Col xs="auto">
+                      <Button
+                        variant="primary"
+                        type="button"
+                        onClick={() => setEmojiShow(!emojiShow)}
+                      >
+                        🙂
+                      </Button>
+                    </Col>
+                    <Col xs="auto">
+                      <Button
+                        variant="primary"
+                        type="button"
+                        id="send"
+                        onClick={handleSend}
+                      >
+                        <FontAwesomeIcon icon={"paper-plane"} />
+                      </Button>
+                    </Col>
+                  </Row>
                 </Col>
               </Row>
-              
             </Container>
           </div>
         </Col>
