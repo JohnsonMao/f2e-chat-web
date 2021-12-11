@@ -2,7 +2,7 @@
 
 ## 專案畫面
 
-![匿名聊天室畫面](blob:https://imgur.com/3e09fb51-125f-4c70-827e-c7bca73db61e)
+![匿名聊天室畫面](https://i.imgur.com/hI9JviJ.png)
 
 ## 專案描述
 
