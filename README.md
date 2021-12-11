@@ -1,6 +1,10 @@
 # 匿名聊天室 | [Demo](https://f2e-chat-web.herokuapp.com/)
 
-## 描述
+## 專案畫面
+
+![匿名聊天室畫面](blob:https://imgur.com/3e09fb51-125f-4c70-827e-c7bca73db61e)
+
+## 專案描述
 
 匿名聊天室 Side Project，包含**前端（使用 React 框架）**與**後端（使用 Express 框架）資料庫（使用 MongoDB 資料庫）**，並架設在 Heroku，採用行動裝置方向的設計來開發，提供**註冊**、**登入**與**匿名即時聊天功能**。
 
