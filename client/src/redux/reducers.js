@@ -24,7 +24,7 @@ function user(state = initUser, action) {
   switch (action.type) {
     case AUTH_SUCCESS: // data: user
       const { userType, name } = action.data;
-      return { ...action.data, redirectTo: getRedirectTo(userType, name) };
+      return { ...action.data, redirectTo: getRedirectTo(name) };
     case ERROR_MSG: // data: msg
       return { ...state, msg: action.data };
     case RECEIVE_USER: // data: user
